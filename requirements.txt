@@ -1,0 +1,8 @@
+flask
+flask-socketio
+eventlet
+pygame
+numpy
+opencv-python
+pyboy
+Pillow

@@ -1,0 +1,45 @@
+<html>
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pokemon Red Emulator</title>
+
+<link rel="stylesheet" href="/static/style.css">
+
+<script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+
+</head>
+
+<body>
+
+<div id="emulator-container">
+
+<div id="title">Pokemon Red Emulator</div>
+
+<canvas id="screen" width="160" height="144"></canvas>
+
+<div id="controls">
+    <button id="save">Save</button>
+    <button id="load">Load</button>
+    <button id="remap">Remap Keys</button>
+</div>
+
+<div id="keymap-panel" style="display:none;">
+  <h3>Remap Keys</h3>
+  <div id="keymap-rows"></div>
+  <button id="save-keymap">Save Keymap</button>
+  <button id="reset-keymap">Reset to Default</button>
+  <button id="close-keymap">Close</button>
+  <div id="keymap-status"></div>
+</div>
+
+<div id="status">Connected</div>
+
+</div>
+
+<script src="/static/main.js"></script>
+
+</body>
+</html>

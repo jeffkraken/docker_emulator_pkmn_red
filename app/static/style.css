@@ -1,0 +1,181 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #111;
+    color: #f2f2f2;
+    font-family: Arial, Helvetica, sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+#emulator-container {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    padding: 30px;
+
+    background: #1a1a1a;
+    border-radius: 12px;
+
+    box-shadow:
+        0 0 20px rgba(0,0,0,0.8),
+        inset 0 0 10px rgba(255,255,255,0.03);
+}
+
+
+#title {
+
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+}
+
+
+#screen {
+
+    width: 640px;
+    height: 576px;
+
+    background: black;
+
+    border: 6px solid #333;
+    border-radius: 6px;
+
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+
+    box-shadow:
+        0 0 25px rgba(0,0,0,0.8);
+}
+
+
+#controls {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    gap: 10px;
+}
+
+button {
+
+    padding: 10px 16px;
+
+    background: #2b2b2b;
+    color: white;
+
+    border: 1px solid #444;
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    transition: all 0.15s ease;
+}
+
+button:hover {
+
+    background: #3b3b3b;
+
+}
+
+button:active {
+
+    transform: scale(0.95);
+
+}
+
+
+#keymap-panel {
+
+    margin-top: 10px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    width: 260px;
+
+}
+
+
+.keymap-row {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 14px;
+
+}
+
+
+.keymap-row input {
+
+    width: 100px;
+
+    padding: 4px;
+
+    background: #222;
+    color: white;
+
+    border: 1px solid #555;
+    border-radius: 4px;
+
+}
+
+#status {
+
+    font-size: 12px;
+    color: #aaa;
+
+}
+
+@media (max-width: 900px) {
+
+    #screen {
+
+        width: 90vw;
+        height: calc(90vw * 0.9);
+
+    }
+
+}
+
+#keymap-panel {
+  background: #222;
+  border: 1px solid #444;
+  border-radius: 6px;
+  padding: 12px;
+  width: 300px;
+  color: white;
+  margin-top: 15px;
+}
+
+.keymap-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.keymap-row button {
+  min-width: 140px;
+  cursor: pointer;
+  padding: 4px 8px;
+  background: #444;
+  border: none;
+  border-radius: 4px;
+  color: white;
+}
+
+.keymap-row button:focus {
+  outline: 2px solid #88f;
+}
