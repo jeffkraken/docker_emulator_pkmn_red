@@ -1,5 +1,5 @@
 import eventlet
-eventlet.monkey_patch()
+eventlet.monkey_patch(socket=True, select=True)
 
 from flask import Flask, render_template, request
 from flask_socketio import SocketIO
