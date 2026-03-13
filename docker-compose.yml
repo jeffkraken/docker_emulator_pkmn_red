@@ -1,5 +1,3 @@
-version: "3.9"
-
 services:
 
   web-emulator:
@@ -13,6 +11,6 @@ services:
 
     volumes:
       - ./saves:/app/saves
-      - ./roms:/app/../roms
+      - ./roms:/roms:ro
 
     restart: unless-stopped

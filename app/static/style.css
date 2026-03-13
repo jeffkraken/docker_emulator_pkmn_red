@@ -94,44 +94,6 @@ button:active {
 }
 
 
-#keymap-panel {
-
-    margin-top: 10px;
-
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-
-    width: 260px;
-
-}
-
-
-.keymap-row {
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    font-size: 14px;
-
-}
-
-
-.keymap-row input {
-
-    width: 100px;
-
-    padding: 4px;
-
-    background: #222;
-    color: white;
-
-    border: 1px solid #555;
-    border-radius: 4px;
-
-}
-
 #status {
 
     font-size: 12px;
