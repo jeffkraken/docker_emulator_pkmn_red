@@ -79,4 +79,4 @@ def on_disconnect():
 if __name__ == "__main__":
     socketio.start_background_task(emulator.start)
     socketio.start_background_task(stream_frames)
-    socketio.run(app, host="0.0.0.0", port=8080)
+    socketio.run(app, host="0.0.0.0", port=8080, allow_unsafe_werkzeug=True)
