@@ -1,6 +1,3 @@
-import eventlet
-eventlet.monkey_patch(socket=True, select=True)
-
 from flask import Flask, render_template, request
 from flask_socketio import SocketIO
 from emulator import Emulator
@@ -11,7 +8,7 @@ import time
 import os
 
 app = Flask(__name__)
-socketio = SocketIO(app, cors_allowed_origins="*", async_mode="eventlet")
+socketio = SocketIO(app, cors_allowed_origins="*", async_mode="threading")
 
 ROM_PATH = "/roms/pokemon_red.gb"
 
@@ -78,7 +75,8 @@ def on_disconnect():
     print("Client disconnected")
 
 
+
 if __name__ == "__main__":
     socketio.start_background_task(emulator.start)
     socketio.start_background_task(stream_frames)
-    socketio.run(app, host="0.0.0.0", port=8080, allow_unsafe_werkzeug=True)
+    socketio.run(app, host="0.0.0.0", port=8080)
