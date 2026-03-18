@@ -3,6 +3,10 @@ const socket = io();
 const canvas = document.getElementById("screen");
 const ctx = canvas.getContext("2d");
 
+canvas.focus();
+
+canvas.addEventListener("click", () => {canvas.focus();});
+
 ctx.imageSmoothingEnabled = false;
 
 socket.on("frame", (data) => {
@@ -15,17 +19,18 @@ function normalizeKey(key) {
     return key.toLowerCase();
 }
 
-document.addEventListener("keydown", (e) => {
+canvas.addEventListener("keydown", (e) => {
     if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight", " "].includes(e.key)) {
         e.preventDefault();
     }
+
     socket.emit("key_event", {
         key: normalizeKey(e.key),
         type: "down"
     });
 });
 
-document.addEventListener("keyup", (e) => {
+canvas.addEventListener("keyup", (e) => {
     socket.emit("key_event", {
         key: normalizeKey(e.key),
         type: "up"
@@ -118,6 +123,7 @@ function populateKeymapRows() {
 document.addEventListener("keydown", (e) => {
     if (!waitingForKey) return;
 
+    e.stopPropagation();
     e.preventDefault();
 
     const oldKey = normalizeKey(waitingForKey);
