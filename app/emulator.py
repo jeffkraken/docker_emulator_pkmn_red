@@ -47,10 +47,22 @@ class Emulator:
         """Main loop: tick the emulator and update latest_frame."""
         print(f"Loaded GameBoy ROM: {self.rom_path}")
 
+        target_fps = 60
+        frame_time = 1.0 / target_fps
+    
         while self.running:
+            start = time.time()
+    
             self.pyboy.tick()
+    
             with self.lock:
                 self.latest_frame = self.pyboy.screen.ndarray.copy()
+    
+            elapsed = time.time() - start
+            sleep_time = frame_time - elapsed
+    
+            if sleep_time > 0:
+                time.sleep(sleep_time)
 
     def handle_input(self, action, event_type="down"):
         """Handle a key press or release event."""
