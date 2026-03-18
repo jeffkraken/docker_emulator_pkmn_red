@@ -1,4 +1,5 @@
 import threading
+import time
 from pyboy import PyBoy
 from pyboy.utils import WindowEvent
 
