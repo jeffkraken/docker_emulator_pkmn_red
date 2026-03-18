@@ -3,6 +3,10 @@ const socket = io();
 const canvas = document.getElementById("screen");
 const ctx = canvas.getContext("2d");
 
+window.addEventListener("load", () => {
+    canvas.focus();
+});
+
 canvas.focus();
 
 canvas.addEventListener("click", () => {canvas.focus();});
